@@ -3,20 +3,19 @@ import {
   Router,
   Route,
   Switch,
-  Link,
-  NavLink,
   Redirect
 } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
 //COMPONENTS
-import Homepage from '../views/Homepage';
+import Contact from '../views/Contact';
 
 export const history = createHistory();
 
 const AppRouter = () => (
   <Router history={history}>
     <Switch>
-        <Route path="/" component={Homepage}/>
+        <Route path="/" exact={true} component={Contact}/>
+        <Route path="/contact" component={Contact}/>
     </Switch>
   </Router>
 )

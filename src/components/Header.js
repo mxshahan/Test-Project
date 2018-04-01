@@ -1,4 +1,8 @@
 import React from 'react';
+import {
+	Link,
+	NavLink,
+} from 'react-router-dom'
 
 const Header = () => (
     <div>
@@ -11,23 +15,23 @@ const Header = () => (
 							<div class="col-xs-3 col-sm-6 col-md-9">
 								<div class="header-top-first clearfix">
 									<ul class="social-links circle small clearfix hidden-xs">
-										<li class="twitter"><a target="_blank" href="http://www.twitter.com/"><i class="fa fa-twitter"></i></a></li>
-										<li class="skype"><a target="_blank" href="http://www.skype.com/"><i class="fa fa-skype"></i></a></li>
-										<li class="linkedin"><a target="_blank" href="http://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
-										<li class="googleplus"><a target="_blank" href="http://plus.google.com/"><i class="fa fa-google-plus"></i></a></li>
-										<li class="youtube"><a target="_blank" href="http://www.youtube.com/"><i class="fa fa-youtube-play"></i></a></li>
-										<li class="facebook"><a target="_blank" href="http://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+										<li class="twitter"><Link target="_blank" to="http://www.twitter.com/"><i class="fa fa-twitter"></i></Link></li>
+										<li class="skype"><Link target="_blank" to="http://www.skype.com/"><i class="fa fa-skype"></i></Link></li>
+										<li class="linkedin"><Link target="_blank" to="http://www.linkedin.com/"><i class="fa fa-linkedin"></i></Link></li>
+										<li class="googleplus"><Link target="_blank" to="http://plus.google.com/"><i class="fa fa-google-plus"></i></Link></li>
+										<li class="youtube"><Link target="_blank" to="http://www.youtube.com/"><i class="fa fa-youtube-play"></i></Link></li>
+										<li class="facebook"><Link target="_blank" to="http://www.facebook.com/"><i class="fa fa-facebook"></i></Link></li>
 									</ul>
 									<div class="social-links hidden-lg hidden-md hidden-sm circle small">
 										<div class="btn-group dropdown">
 											<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-share-alt"></i></button>
 											<ul class="dropdown-menu dropdown-animation">
-												<li class="twitter"><a target="_blank" href="http://www.twitter.com/"><i class="fa fa-twitter"></i></a></li>
-												<li class="skype"><a target="_blank" href="http://www.skype.com/"><i class="fa fa-skype"></i></a></li>
-												<li class="linkedin"><a target="_blank" href="http://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
-												<li class="googleplus"><a target="_blank" href="http://plus.google.com/"><i class="fa fa-google-plus"></i></a></li>
-												<li class="youtube"><a target="_blank" href="http://www.youtube.com/"><i class="fa fa-youtube-play"></i></a></li>
-												<li class="facebook"><a target="_blank" href="http://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+												<li class="twitter"><Link target="_blank" to="http://www.twitter.com/"><i class="fa fa-twitter"></i></Link></li>
+												<li class="skype"><Link target="_blank" to="http://www.skype.com/"><i class="fa fa-skype"></i></Link></li>
+												<li class="linkedin"><Link target="_blank" to="http://www.linkedin.com/"><i class="fa fa-linkedin"></i></Link></li>
+												<li class="googleplus"><Link target="_blank" to="http://plus.google.com/"><i class="fa fa-google-plus"></i></Link></li>
+												<li class="youtube"><Link target="_blank" to="http://www.youtube.com/"><i class="fa fa-youtube-play"></i></Link></li>
+												<li class="facebook"><Link target="_blank" to="http://www.facebook.com/"><i class="fa fa-facebook"></i></Link></li>
 											</ul>
 										</div>
 									</div>
@@ -43,8 +47,8 @@ const Header = () => (
 								<div id="header-top-second" class="clearfix text-right">
 									<nav>
 										<ul class="list-inline">
-											<li><a class="link-light " href="page-login.html"><i class="fa fa-users pr-5"></i>Log In</a></li>
-											<li><a class="link-light " href="page-signup.html"><i class="fa fa-user pr-5"></i>Sign Up</a></li>
+											<li><Link class="link-light " to="page-login.html"><i class="fa fa-users pr-5"></i>Log In</Link></li>
+											<li><Link class="link-light " to="page-signup.html"><i class="fa fa-user pr-5"></i>Sign Up</Link></li>
 										</ul>
 									</nav>
 								</div>
@@ -59,7 +63,7 @@ const Header = () => (
 							<div class="col-md-3">
 								<div class="header-left clearfix">
 									<div id="logo" class="logo">
-										<a href="index.html"><h2 class="logo-font title pr-10">Training Academy</h2></a>
+										<Link to="/"><h2 class="logo-font title pr-10">Training Academy</h2></Link>
 									</div>
 								
 								</div>
@@ -79,10 +83,10 @@ const Header = () => (
 												</div>
 												<div class="collapse navbar-collapse" id="navbar-collapse-1">
 													<ul class="nav navbar-nav ">
-														<li class="active"><a href="index.html">Home</a></li>
-														<li><a href="about.html">About Us</a></li>
-														<li><a href="#">Courses</a></li>
-														<li><a href="contact.html">Contact</a></li>
+														<li><NavLink activeClassName="active" to="/">Home</NavLink></li>
+														<li><NavLink activeClassName="active" to="/">About</NavLink></li>
+														<li><NavLink activeClassName="active" to="/">Courses</NavLink></li>
+														<li><NavLink activeClassName="active" to="/contact">Contact</NavLink></li>
 													</ul>
 												</div>
 											</div>
