@@ -1,0 +1,16 @@
+{
+    "presets": [
+        "react",
+        "es2015"
+    ], 
+    "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread", 
+        ["module-resolver", {
+            "alias": {
+              "@webpack": "./webpack.config.js",
+              "@pub": "./public"
+            }
+        }]
+    ]
+}
