@@ -1,20 +1,17 @@
 import React from 'react';
-import AddressBar from './AddressBar';
 const bannerStyle = {
     backgroundImage: "url('images/background-img-3.jpg')",
     backgroundPosition: "50% 30%"
 }
 
-const Banner = (props) => (
+const NotFound = (props) => (
     <div class="banner dark-translucent-bg" style={bannerStyle}>
-        <AddressBar title={props.title}/>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-8 text-center col-md-offset-2 pv-20">
-                    <h1 class="page-title text-center">{props.title}</h1>
+                    <h1 class="page-title text-center">404 Error!</h1>
                     <div class="separator"></div>
-                    <p class="lead text-center">It would be great to hear from you! Just drop us a line and ask for anything with which you think we could be helpful. We are looking forward to hearing from you!</p>
+                    <p class="lead text-center">Its seems that the page is not exist. Go back or go to homepage</p>
                     <ul class="list-inline mb-20 text-center">
                         <li><i class="text-default fa fa-map-marker pr-5"></i>7 Boroughbridge Road, Birley, UK</li>
                         <li><a href="tel:+00 1234567890" class="link-dark"><i class="text-default fa fa-phone pl-10 pr-5"></i>+44 079 8708-6739</a></li>
@@ -35,4 +32,4 @@ const Banner = (props) => (
     </div>
 );
 
-export default Banner;
+export default NotFound;

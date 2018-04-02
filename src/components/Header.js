@@ -47,8 +47,8 @@ const Header = () => (
 								<div id="header-top-second" class="clearfix text-right">
 									<nav>
 										<ul class="list-inline">
-											<li><Link class="link-light " to="page-login.html"><i class="fa fa-users pr-5"></i>Log In</Link></li>
-											<li><Link class="link-light " to="page-signup.html"><i class="fa fa-user pr-5"></i>Sign Up</Link></li>
+											<li><Link class="link-light " to="/login"><i class="fa fa-users pr-5"></i>Log In</Link></li>
+											<li><Link class="link-light " to="/signup"><i class="fa fa-user pr-5"></i>Sign Up</Link></li>
 										</ul>
 									</nav>
 								</div>
@@ -84,8 +84,8 @@ const Header = () => (
 												<div class="collapse navbar-collapse" id="navbar-collapse-1">
 													<ul class="nav navbar-nav ">
 														<li><NavLink activeClassName="active" to="/">Home</NavLink></li>
-														<li><NavLink activeClassName="active" to="/">About</NavLink></li>
-														<li><NavLink activeClassName="active" to="/">Courses</NavLink></li>
+														<li><NavLink activeClassName="active" to="/about">About</NavLink></li>
+														<li><NavLink activeClassName="active" to="/courses">Courses</NavLink></li>
 														<li><NavLink activeClassName="active" to="/contact">Contact</NavLink></li>
 													</ul>
 												</div>

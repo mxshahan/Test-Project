@@ -3,12 +3,12 @@ import MainContent from '../components/Contact/MainContent';
 import Parallex from '../components/Contact/Parallex';
 import Banner from '../components/Banner';
 
-const Contact = (props) => (
+const About = (props) => (
 	<div className="page-wrapper">
-	    <Banner title="Contact"/>	
+	    <Banner title="About"/>	
 		<MainContent/>
 		<Parallex/>
 	</div>
 );
 
-export default Contact;
+export default About;
