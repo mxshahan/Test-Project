@@ -3,10 +3,10 @@ import DBSidebar from './DBSidebar';
 import IndCourse from './IndCourse';
 import Pagination from './Pagination';
 import StdFilter from './StdFilter';
-import Axios from 'axios';
+import axios from 'axios';
 import { setCourse } from '../../actions/course';
 import { connect } from 'react-redux'
-const server = 'http://localhost:3000';
+// const server = 'http://localhost:3000';
 
 
 class Dashboard extends React.Component{
@@ -16,7 +16,7 @@ class Dashboard extends React.Component{
     }
 
     componentDidMount() {
-        Axios.get(`${server}/api/course/getAllCourse`).then((res) => {
+        axios.get(`/api/course/getAllCourse`).then((res) => {
             // console.log(res.data);
             this.setState({
                 courses: res.data

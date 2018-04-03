@@ -8,7 +8,7 @@ const bannerStyle = {
     backgroundImage: "url('images/background-img-6.jpg')",
     backgroundPosition: "50% 30%"
 }
-const server = 'http://localhost:3000';
+// const server = 'http://localhost:3000';
 
 class Signup extends React.Component{
     state = {
@@ -35,7 +35,7 @@ class Signup extends React.Component{
                 accountType: this.state.accountType
             }
 
-            axios.post(`${server}/api/user/signup`, userData).then((res) => {
+            axios.post(`/api/user/signup`, userData).then((res) => {
                 console.log('Successfully Signup with response', res);
                 const body = {
                     token: res.data.token,

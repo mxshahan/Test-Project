@@ -62,7 +62,7 @@ class Dashboard extends React.Component {
                     description: this.state.title
                 }
                 console.log('Stripe Elem', stripeElem)
-                axios.post(`${server}/api/course/charge`, stripeElem)
+                axios.post(`/api/course/charge`, stripeElem)
                 .then((res) => {
                     console.log('Respons', res);
                     this.handleSaveData();
@@ -90,7 +90,7 @@ class Dashboard extends React.Component {
 
         axios({
             method: 'post', 
-            url: `${server}/api/user/trainer/addcourse`,
+            url: `/api/user/trainer/addcourse`,
             data: course,
             headers: {
                 'Content-Type': 'application/json',

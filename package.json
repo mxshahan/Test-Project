@@ -7,7 +7,8 @@
     "build": "webpack",
     "dev": "webpack-dev-server --hot --watch",
     "server": "nodemon server",
-    "start": "node dist/app"
+    "start": "node dist/app",
+    "serv": "babel server/app --out-dir dist/app"
   },
   "dependencies": {
     "alias": "^0.0.5",
@@ -39,6 +40,7 @@
     "react-datepicker": "^1.2.2",
     "react-dates": "^16.3.6",
     "react-dom": "^16.2.0",
+    "react-owl-carousel2": "^0.3.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-stripe-checkout": "^2.6.3",

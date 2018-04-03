@@ -6,8 +6,10 @@ import { setDownload } from '../actions/course'
 import { connect } from 'react-redux';
 
 
-const server = 'http://localhost:3000';
-
+// const events = {
+//     onDragged: function(event) {...},
+//     onChanged: function(event) {...}
+// };
 
 class CourseDetails extends React.Component{
     
@@ -19,7 +21,7 @@ class CourseDetails extends React.Component{
 
     componentDidMount() {
         const courseID = this.props.location.search.substring(4)//Removing Query String ?id=
-        axios.get(`${server}/api/course/getCourse/${courseID}`).then((res) => {
+        axios.get(`/api/course/getCourse/${courseID}`).then((res) => {
             // console.log(res.data);
             this.setState({
                 courses: res.data,
@@ -55,7 +57,7 @@ class CourseDetails extends React.Component{
                     description: this.state.courses.title
                 }
                 console.log('Stripe Elem', stripeElem)
-                axios.post(`${server}/api/course/charge`, stripeElem)
+                axios.post(`/api/course/charge`, stripeElem)
                 .then((res) => {
                     console.log('Respons', res);
                     // this.handleSaveData();
