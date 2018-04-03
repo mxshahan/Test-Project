@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack -w",
+    "build": "webpack",
     "dev": "webpack-dev-server --hot --watch",
     "server": "nodemon server",
     "start": "concurrently \"npm run server\"  \"npm run dev\""

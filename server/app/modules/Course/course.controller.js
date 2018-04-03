@@ -18,7 +18,7 @@ export async function GetSingleCourse(req, res) {
     try{
         const course = await Course.findById(courseID);
         course.purchase.student.push(courseID)
-        console.log(course)
+        // console.log(course)
         
         return res.status(201).json(course);
     }catch(e){

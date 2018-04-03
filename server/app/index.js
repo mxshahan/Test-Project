@@ -6,6 +6,14 @@ import './conf/db';
 
 const port = config.get('app.PORT');
 const app = express();
+
+app.use(express.static(__dirname +'./../../public'));
+
+// const staticServe = express.static('../..');
+
+// app.use("/", staticServe);
+// app.use("*", staticServe);
+
 //All basic configuration done in middleware
 middlewaresConfig(app);
 //import userRoutes from './modules/User/user.routes'

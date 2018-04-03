@@ -1,6 +1,6 @@
 import React from 'react';
 import AddressBar from '../components/AddressBar';
-import Axios from 'axios'
+import axios from 'axios'
 import CourseHeader from '../components/Course/CourseHeader'
 import { setDownload } from '../actions/course'
 import { connect } from 'react-redux';
@@ -19,7 +19,7 @@ class CourseDetails extends React.Component{
 
     componentDidMount() {
         const courseID = this.props.location.search.substring(4)//Removing Query String ?id=
-        Axios.get(`${server}/api/course/getCourse/${courseID}`).then((res) => {
+        axios.get(`${server}/api/course/getCourse/${courseID}`).then((res) => {
             // console.log(res.data);
             this.setState({
                 courses: res.data,
@@ -125,7 +125,7 @@ class CourseDetails extends React.Component{
                                             <li><strong>Place: </strong><span class="text-right">UK</span></li>
                                             <li><strong>Price: </strong><span class="text-right">{this.state.courses.price}</span></li>
                                         </ul>
-                                        {this.props.download ? 
+                                        {this.state.download ? 
                                         <a href={this.state.images[0]} class="btn btn-animated btn-default btn-lg">Download Now <i class="fa fa-download"></i></a>
                                         : 
                                         <a onClick={this.handlePayment} href="#" class="btn btn-animated btn-default btn-lg">Enroll Now <i class="fa fa-external-link"></i></a> 
@@ -150,12 +150,12 @@ class CourseDetails extends React.Component{
     }
 }
 
-const mapStateToProps = (state) => ({
-    payment: state.course.payment
-})
+// const mapStateToProps = (state) => ({
+//     payment: state.course.payment
+// })
 
 const mapDispatchToProps = (dispatch) => ({
     setDownload : (id) => dispatch(setDownload(id))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(CourseDetails);
+export default connect(null, mapDispatchToProps)(CourseDetails);
