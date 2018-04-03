@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack -w",
     "dev": "webpack-dev-server --hot --watch",
     "server": "nodemon server",
     "start": "node dist/app",
@@ -40,6 +40,7 @@
     "react-datepicker": "^1.2.2",
     "react-dates": "^16.3.6",
     "react-dom": "^16.2.0",
+    "react-owl-carousel": "^2.2.0",
     "react-owl-carousel2": "^0.3.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",

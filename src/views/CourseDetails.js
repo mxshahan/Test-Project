@@ -4,6 +4,8 @@ import axios from 'axios'
 import CourseHeader from '../components/Course/CourseHeader'
 import { setDownload } from '../actions/course'
 import { connect } from 'react-redux';
+import OwlCarousel from 'react-owl-carousel2';
+// import 'react-owl-carousel2/style.css';
 
 
 // const events = {
