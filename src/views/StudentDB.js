@@ -1,9 +1,11 @@
 import React from 'react';
+import Dashboard from '../components/STD/Dashboard';
+import { Link } from 'react-router-dom';
 
-const Login = (props) => (
+const stdDB = (props) => (
 	<div classNameName="page-wrapper">
-        <h1>Student Dashboard</h1>
+        <Dashboard/>
     </div>
 );
 
-export default Login;
+export default stdDB;

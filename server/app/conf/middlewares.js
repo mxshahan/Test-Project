@@ -4,7 +4,6 @@ import compression from 'compression';
 import helmet from 'helmet';
 import passport from 'passport';
 import cors from 'cors';
-import apiRouter from '../routes';
 
 const isDev = process.env.NODE_ENV == "development";
 const isProd = process.env.NODE_ENV == "production";
@@ -14,12 +13,10 @@ export default (app) => {
         app.use(compression());
         app.use(helmet());
     }
+    app.use(cors())
     
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
-
-    app.use('/api', apiRouter)
-    app.use(cors())
   
     app.use(passport.initialize());
     
@@ -27,22 +24,36 @@ export default (app) => {
         app.use(morgan('dev'));
     }
 
-    //catch 404 Errors and forward them to error handeler
-    app.use((req, res, next) => {
-        const err = new Error('Not Found');
-        err.status = 404;
-        next(err);
-    });
+    // //catch 404 Errors and forward them to error handeler
+    // app.use((req, res, next) => {
+    //     const err = new Error('Not Found');
+    //     err.status = 404;
+    //     next(err);
+    // });
 
-    //Error handler funciton
-    app.use((err, req, res, next) => {
+    // //Error handler funciton
+    // app.use((err, req, res, next) => {
+    //     const error = app.get('env') === 'development' ? err : {};
+    //     const status = err.status || 500;
+    //     //Respond to  client 
+    //     res.status(status).json({
+    //         error: {
+    //             message: error.message
+    //         }
+    //     });
+    // });
+
+       //catch 404 Errors and forward them to error handler
+       app.use((err, req, res, next) => {
         const error = app.get('env') === 'development' ? err : {};
         const status = err.status || 500;
-        //Respond to  client 
+        //Respond to client
         res.status(status).json({
             error: {
                 message: error.message
             }
         });
+        //Respond to ourselves
+        console.error(err);
     });
 }

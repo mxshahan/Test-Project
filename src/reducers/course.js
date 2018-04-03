@@ -1,0 +1,21 @@
+export default (state = {}, action) => {
+    switch(action.type){
+        case 'ADD_COURSE':
+            return [
+                ...state,
+                ...action.courses
+            ]
+        case 'SET_COURSE': {
+            // console.log('action',action.data)
+            state = action.data
+        }
+
+        case 'SET_PAYMENT': {
+            return {
+                payment: action.courseID
+            }
+        }
+        default:
+            return state;
+    }
+}
