@@ -31,10 +31,11 @@ const TrainingHistory = () => (
                                 <h2 class="title">Get the latest courses news.</h2>
                                 <div class="separator mb-20"></div>
                                 <form class="form-inline margin-clear">
-                                    <div class="form-group has-feedback">
-                                        <label class="sr-only" for="subscribe3">Email address</label>
-                                        <input type="email" class="form-control form-control-lg" id="subscribe3" placeholder="Enter email" name="subscribe3" required=""/> <i class="fa fa-envelope form-control-feedback"></i></div>
-                                    <button type="submit" class="btn btn-lg btn-default btn-animated margin-clear">Subscribe <i class="fa fa-send"></i></button>
+                                        <div class="form-group has-feedback" style={{marginRight: "5px"}}>
+                                            <label class="sr-only" for="subscribe3">Email address</label>
+                                            <input type="email" class="form-control form-control-lg" id="subscribe3" placeholder="Enter email" name="subscribe3" required=""/> <i class="fa fa-envelope form-control-feedback"></i>
+                                        </div>
+                                        <button type="submit" class="btn btn-lg btn-default btn-animated margin-clear">Subscribe <i class="fa fa-send"></i></button>
                                 </form>
                             </div>
                         </div>

@@ -31,8 +31,9 @@ var login = exports.login = async function login(req, res, next) {
 
 var getUserData = exports.getUserData = async function getUserData(req, res, next) {
     try {
-        var user = await _user2.default.findById(req.user._id).populate('course');
-        console.log(user);
+        var user = await _user2.default.findById(req.user._id).populate('course', '-password');
+        // console.log(user)
+
         res.status(200).json(user);
     } catch (e) {
         return res.status(500).json(e);

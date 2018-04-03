@@ -15,14 +15,33 @@ class Dashboard extends React.Component {
         media: {
             link: []
         },
-        msg: ''
+        msg: '',
+        uploadStatus: false
+    }
+
+    
+    componentWillMount() {
+        axios.get(`/api/course/getAllCourse/${localStorage.getItem('userID')}`).then((res) => {
+            console.log(res.data);
+            this.setState({
+                courses: res.data
+            })
+            // this.props.setAllCourse(res.data);
+        }).catch(e => {
+            console.log('Cannot get data', e)
+        })
+        // console.log(sessionStorage.getItem('accessToken'));
     }
 
     handleFileUpload = (e) => {
+        this.setState({
+            uploadStatus: 'Please Wait...',            
+        })
         const file = e.target.files[0];        
         const storageRef = storage.ref('projects/'+ file.name);
         const task = storageRef.put(file).then((res) => {
             this.setState({
+                uploadStatus: 'Uploaded Successfully!',
                 //Getting the uploaded file URL
                 media: {
                     link: [
@@ -158,7 +177,7 @@ class Dashboard extends React.Component {
                             <div className="col-md-12">
                                 <div className="form-group">
                                     <input type="file" id="exampleInputFile" onChange={this.handleFileUpload}/>
-                                    <p className="help-block">Upoad Your Course Documents Here.</p>
+                                    <p className="help-block">{this.state.uploadStatus ? this.state.uploadStatus : 'Upoad Your Course Documents Here.'}</p>
                                     {this.state.msg && <p className="help-block">{this.state.msg}</p>}
                                 </div>
                             </div>

@@ -15,7 +15,7 @@ const Courses = () => (
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-lg-2">
                     <div class="image-box shadow text-center mb-20">
-                        <div class="overlay-container overlay-visible"><img src="images/education-4.jpg" alt=""/> <a href="page-signup.html" class="overlay-link"><i class="fa fa-link"></i></a>
+                        <div class="overlay-container overlay-visible"><img src="images/education-4.jpg" alt=""/> <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
                             <div class="overlay-bottom">
                                 <div class="text">
                                     <p class="lead margin-clear mobile-visible">Computer Science</p>
@@ -27,7 +27,7 @@ const Courses = () => (
 
                 <div class="col-sm-6 col-md-4 col-lg-2">
                     <div class="image-box shadow text-center mb-20">
-                        <div class="overlay-container overlay-visible"><img src="images/education-5.jpg" alt=""/> <a href="page-signup.html" class="overlay-link"><i class="fa fa-link"></i></a>
+                        <div class="overlay-container overlay-visible"><img src="images/education-5.jpg" alt=""/> <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
                             <div class="overlay-bottom">
                                 <div class="text">
                                     <p class="lead margin-clear mobile-visible">Retails</p>
@@ -39,7 +39,7 @@ const Courses = () => (
 
                 <div class="col-sm-6 col-md-4 col-lg-2">
                     <div class="image-box shadow text-center mb-20">
-                        <div class="overlay-container overlay-visible"><img src="images/education-6.jpg" alt=""/> <a href="page-signup.html" class="overlay-link"><i class="fa fa-link"></i></a>
+                        <div class="overlay-container overlay-visible"><img src="images/education-6.jpg" alt=""/> <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
                             <div class="overlay-bottom">
                                 <div class="text">
                                     <p class="lead margin-clear mobile-visible">Finance</p>
@@ -51,7 +51,7 @@ const Courses = () => (
 
                 <div class="col-sm-6 col-md-4 col-lg-2">
                     <div class="image-box shadow text-center mb-20">
-                        <div class="overlay-container overlay-visible"><img src="images/education-7.jpg" alt=""/> <a href="page-signup.html" class="overlay-link"><i class="fa fa-link"></i></a>
+                        <div class="overlay-container overlay-visible"><img src="images/education-7.jpg" alt=""/> <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
                             <div class="overlay-bottom">
                                 <div class="text">
                                     <p class="lead margin-clear mobile-visible">Digital Marketing</p>
@@ -62,7 +62,7 @@ const Courses = () => (
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-2">
                     <div class="image-box shadow text-center mb-20">
-                        <div class="overlay-container overlay-visible"><img src="images/education-8.jpg" alt=""/> <a href="page-signup.html" class="overlay-link"><i class="fa fa-link"></i></a>
+                        <div class="overlay-container overlay-visible"><img src="images/education-8.jpg" alt=""/> <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
                             <div class="overlay-bottom">
                                 <div class="text">
                                     <p class="lead margin-clear mobile-visible">Sales</p>
@@ -73,7 +73,7 @@ const Courses = () => (
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-2">
                     <div class="image-box shadow text-center mb-20">
-                        <div class="overlay-container overlay-visible"><img src="images/education-9.jpg" alt=""/> <a href="page-signup.html" class="overlay-link"><i class="fa fa-link"></i></a>
+                        <div class="overlay-container overlay-visible"><img src="images/education-9.jpg" alt=""/> <a href="#" class="overlay-link"><i class="fa fa-link"></i></a>
                             <div class="overlay-bottom">
                                 <div class="text">
                                     <p class="lead margin-clear mobile-visible">Science</p>

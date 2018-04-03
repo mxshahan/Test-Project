@@ -17,5 +17,6 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var routes = new _express.Router();
 routes.get('/getCourse/:id', courseController.GetSingleCourse);
 routes.get('/getAllCourse', courseController.GetAllCourse);
+routes.get('/getAllCourse/:id', courseController.GetUserCourse);
 routes.post('/charge', courseController.stripeCharge);
 exports.default = routes;

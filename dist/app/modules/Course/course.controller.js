@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.GetAllCourse = GetAllCourse;
 exports.GetSingleCourse = GetSingleCourse;
 exports.stripeCharge = stripeCharge;
+exports.GetUserCourse = GetUserCourse;
 
 var _user = require('../User/user.model');
 
@@ -62,4 +63,16 @@ async function stripeCharge(req, res) {
     }).then(function (charge) {
         return res.render('success');
     });
+}
+
+async function GetUserCourse(req, res) {
+    var userID = req.params.id;
+    try {
+        var course = await _course2.default.find({ trainer: userID });
+        console.log(course);
+
+        return res.status(201).json(course);
+    } catch (e) {
+        return res.status(500).json('Error', e);
+    }
 }

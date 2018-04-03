@@ -18,8 +18,9 @@ export const login = async (req, res, next) => {
 
 export const getUserData = async (req, res, next) => {
     try {
-        const user = await User.findById(req.user._id).populate('course')
-        console.log(user)
+        const user = await User.findById(req.user._id).populate('course', '-password')
+        // console.log(user)
+        
         res.status(200).json(user);
        } catch (e) {
            return res.status(500).json(e)

@@ -4,10 +4,15 @@ import axios from 'axios'
 import CourseHeader from '../components/Course/CourseHeader'
 import { setDownload } from '../actions/course'
 import { connect } from 'react-redux';
-import OwlCarousel from 'react-owl-carousel2';
+import OwlCarousel from 'react-owl-carousel';
 // import 'react-owl-carousel2/style.css';
 
-
+const options = {
+    items: 1,
+    nav: true,
+    rewind: true,
+    autoplay: true
+};
 // const events = {
 //     onDragged: function(event) {...},
 //     onChanged: function(event) {...}
@@ -89,35 +94,11 @@ class CourseDetails extends React.Component{
                     <AddressBar title="Course Details"/>
                 <div class="pv-40 banner light-gray-bg">
                     <div class="container clearfix">
-                        <div class="slideshow">
-                            <div class="slider-banner-container">
-                                <div class="slider-banner-boxedwidth-stopped">
-                                    <ul class="slides">
-                                        <li data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="500" data-saveperformance="on" data-title="Slide 1"><img src="images/portfolio-item-banner-1.jpg" alt="slidebg1" data-bgposition="center top" data-bgrepeat="no-repeat" data-bgfit="cover"/>
-                                            <div class="tp-caption dark-translucent-bg" data-x="center" data-y="bottom" data-speed="600" data-start="0"></div>
-                                            <div class="tp-caption sfb fadeout text-center large_white" data-x="center" data-y="110" data-speed="500" data-start="1000" data-easing="easeOutQuad">Course Name</div>
-                                            <div class="tp-caption sfb fadeout text-center large_white tp-resizeme" data-x="center" data-y="155" data-speed="500" data-start="1300" data-easing="easeOutQuad">
-                                                <div class="separator light"></div>
-                                            </div>
-                                            <div class="tp-caption sfb fadeout medium_white text-center" data-x="center" data-y="190" data-speed="500" data-start="1300" data-easing="easeOutQuad" data-endspeed="600">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                <br/>Nesciunt, maiores, aliquid. Repellat eum numquam
-                                                <br/>culpa offici, tenetur fugiat dolorum sapiente...</div>
-                                        </li>
-                                        <li data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="500" data-saveperformance="on" data-title="Slide 2"><img src="images/portfolio-item-banner-2.jpg" alt="slidebg2" data-bgposition="center top" data-bgrepeat="no-repeat" data-bgfit="cover"/>
-                                            <div class="tp-caption dark-translucent-bg" data-x="center" data-y="bottom" data-speed="600" data-start="0"></div>
-                                            <div class="tp-caption sfb fadeout text-center large_white" data-x="center" data-y="110" data-speed="500" data-start="1000" data-easing="easeOutQuad">Course Name</div>
-                                            <div class="tp-caption sfb fadeout text-center large_white tp-resizeme" data-x="center" data-y="155" data-speed="500" data-start="1300" data-easing="easeOutQuad">
-                                                <div class="separator light"></div>
-                                            </div>
-                                            <div class="tp-caption sfb fadeout medium_white text-center" data-x="center" data-y="190" data-speed="500" data-start="1300" data-easing="easeOutQuad" data-endspeed="600">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                <br/>Nesciunt, maiores, aliquid. Repellat eum numquam
-                                                <br/>culpa offici, tenetur fugiat dolorum sapiente...</div>
-                                        </li>
-                                    </ul>
-                                    <div class="tp-bannertimer"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <ul class="" style={{listStyle: "none"}}>
+                            <li >
+                                <img src="images/portfolio-item-banner-1.jpg" alt="slidebg1" width="100%"/>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <section class="main-container padding-ver-clear">

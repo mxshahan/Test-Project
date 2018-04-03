@@ -45,3 +45,16 @@ export async function stripeCharge(req, res){
     }))
     .then( (charge) => res.render('success'));
 }
+
+
+export async function GetUserCourse (req, res){
+    const userID = req.params.id;
+    try{
+        const course = await Course.find({trainer: userID});
+        console.log(course)
+        
+        return res.status(201).json(course);
+    }catch(e){
+        return res.status(500).json('Error', e)
+    }
+}
