@@ -45,22 +45,7 @@ class Login extends React.Component{
             })
         })
 
-		axios({
-			method: 'get', 
-			url: `/api/user/me`,
-            headers: {
-                'Content-Type': 'application/json',
-                'auth': this.props.token
-            }
-		}).then(res => {
-			// console.log(res)
-			this.setState({
-				data: res.data
-			});
-			localStorage.setItem('userID', res.data._id)
-		}).catch(e => {
-			console.log(e)
-		})
+
 	
     }
 
@@ -123,7 +108,8 @@ class Login extends React.Component{
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    loginUser: (body) => dispatch(startCreateUser(body))
+    loginUser: (body) => dispatch(startCreateUser(body)),
+	token: localStorage.getItem('accessToken')    
 })
 
 

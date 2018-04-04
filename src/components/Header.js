@@ -67,7 +67,7 @@ class Header extends React.Component{
 														localStorage.clear();
 														this.props.LogoutUser()
 													}}>
-													<i className="fa fa-user pr-10"></i> Hi {this.state.data.firstName}, Logout</a>
+													<i className="fa fa-user pr-10"></i>Logout</a>
 													<Link to="/dashboard" className="btn btn-default btn-sm">
 													<i className="fa fa-edit pr-10"></i> Dashboard</Link>
 													</div>
