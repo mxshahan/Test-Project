@@ -40,6 +40,9 @@ class Login extends React.Component{
             this.props.loginUser(body)
         }).catch(e => {
             console.log('Login error', e)
+            this.setState({
+                loginStatus: false
+            })
         })
 
 		axios({

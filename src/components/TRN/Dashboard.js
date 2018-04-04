@@ -97,6 +97,8 @@ class Dashboard extends React.Component {
                 axios.post(`/api/course/charge`, stripeElem)
                 .then((res) => {
                     console.log('Respons', res);
+                    // this.setState({ msg: 'Successfully Addedd'});
+                    alert('Successfully Added')
                     this.handleSaveData();
                 }).catch(e => {
                     console.log('Error', e);
@@ -134,6 +136,7 @@ class Dashboard extends React.Component {
             this.setState({
                 msg:'Successfull...'
             })
+            alert("Successfull!")
             this.props.addCourses(res.data)
         }).catch(e => {
             console.log('Err on adding Course', e)
@@ -191,7 +194,7 @@ class Dashboard extends React.Component {
                                 <div className="form-group">
                                     <input type="file" id="exampleInputFile" onChange={this.handleFileUpload}/>
                                     <p className="help-block">{this.state.uploadStatus ? this.state.uploadStatus : 'Upoad Your Course Documents Here.'}</p>
-                                    {this.state.msg && <p className="help-block">{this.state.msg}</p>}
+                                    {this.state.msg && <h3 className="help-block">{this.state.msg}</h3>}
                                 </div>
                             </div>
                         </div>
