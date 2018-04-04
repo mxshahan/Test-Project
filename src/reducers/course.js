@@ -5,6 +5,7 @@ export default (state = {}, action) => {
                 ...state,
                 ...action.courses
             ]
+
         case 'SET_COURSE': {
             // console.log('action',action.data)
             state = action.data
@@ -15,6 +16,14 @@ export default (state = {}, action) => {
                 payment: action.courseID
             }
         }
+
+        case 'SET_TRAINER_COURSE': {
+            return [
+                ...state,
+                ...action.courses
+            ]
+        }
+
         default:
             return state;
     }

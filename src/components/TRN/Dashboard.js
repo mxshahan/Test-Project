@@ -2,9 +2,9 @@ import React from 'react';
 import axios from 'axios';
 // import { handler } from '../../Stripe/Stripe'
 import { connect } from 'react-redux';
-import { startAddCourses } from '../../actions/course';
+import { startAddCourses, setTrainerCourse } from '../../actions/course';
 import storage from '../../firebase/firebase';
-
+import IndCourse from '../STD/IndCourse';
 const server = 'http://localhost:3000';
 
 class Dashboard extends React.Component {
@@ -16,19 +16,32 @@ class Dashboard extends React.Component {
             link: []
         },
         msg: '',
-        uploadStatus: false
+        uploadStatus: false,
+        courses: []
     }
 
     
     componentWillMount() {
-        axios.get(`/api/course/getAllCourse/${localStorage.getItem('userID')}`).then((res) => {
-            console.log(res.data);
-            this.setState({
-                courses: res.data
-            })
+        // this.setState(() => {
+        //     courses: this.props._courses
+        // })
+        axios({
+			method: 'get', 
+			url: `/api/user/trainer/courses`,
+            headers: {
+                'Content-Type': 'application/json',
+                'auth': this.props.token
+            }
+        }).then((res) => {
+            // console.log(res.data);
+            this.props.setTrainerCourse(res.data)
             // this.props.setAllCourse(res.data);
+        }).then(() => {
+            this.setState({
+                courses: this.props._courses
+            })
         }).catch(e => {
-            console.log('Cannot get data', e)
+            console.log('Cannot get data', e);
         })
         // console.log(sessionStorage.getItem('accessToken'));
     }
@@ -117,7 +130,7 @@ class Dashboard extends React.Component {
             }
         })
         .then((res) => {
-            console.log(res);
+            // console.log(res);
             this.setState({
                 msg:'Successfull...'
             })
@@ -128,7 +141,7 @@ class Dashboard extends React.Component {
     }
 
     render() {
-        // console.log(this.state.media)
+        // console.log(this.state.courses)
         return (
             <div className="section light-gray-bg">
                 <div className="container">
@@ -184,6 +197,13 @@ class Dashboard extends React.Component {
                         </div>
                         <input type="submit" className="btn btn-default" defaultValue="Pay & Upload"/>
                     </form>
+
+                    <div className="row">
+                        {this.state.courses ? this.state.courses.map((course, index) => {
+                            return <IndCourse course={course} key={index}/>
+                        }) : 'Please Wait...'}
+                    </div>
+
                 </div>
             </div>
         )
@@ -191,11 +211,13 @@ class Dashboard extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    token: state.auth.token
+    token: localStorage.getItem('accessToken'),
+    _courses: state.courses
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    addCourses: () => dispatch(startAddCourses)
+    addCourses: (courses) => dispatch(startAddCourses(courses)),
+    setTrainerCourse: (courses) => dispatch(setTrainerCourse(courses))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
