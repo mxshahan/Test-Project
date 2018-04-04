@@ -30,16 +30,11 @@ var app = (0, _express2.default)();
 var publicDir = __dirname + './../../public';
 
 app.use(_express2.default.static(publicDir));
-
-// const staticServe = express.static('../..');
-
-// app.use("/", staticServe);
-// app.use("*", staticServe);
+app.use('/admin', _express2.default.static(__dirname + './../../admin'));
 
 //All basic configuration done in middleware
 (0, _middlewares2.default)(app);
-//import userRoutes from './modules/User/user.routes'
-//app.use('/api/user', userRoutes)
+
 (0, _routes2.default)(app);
 
 app.use((0, _expressHistoryApiFallback2.default)('index.html', { root: publicDir }));

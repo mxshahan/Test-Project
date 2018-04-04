@@ -11,16 +11,11 @@ const app = express();
 const publicDir = `${__dirname}./../../public`;
 
 app.use(express.static(publicDir));
-
-// const staticServe = express.static('../..');
-
-// app.use("/", staticServe);
-// app.use("*", staticServe);
+app.use('/admin', express.static(`${__dirname}./../../admin`));
 
 //All basic configuration done in middleware
 middlewaresConfig(app);
-//import userRoutes from './modules/User/user.routes'
-//app.use('/api/user', userRoutes)
+
 apiRoutes(app);
 
 app.use(fallback('index.html', { root: publicDir }));

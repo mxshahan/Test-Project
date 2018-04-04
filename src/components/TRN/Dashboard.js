@@ -136,7 +136,7 @@ class Dashboard extends React.Component {
             this.setState({
                 msg:'Successfull...'
             })
-            alert("Successfull!")
+            // alert("Successfull!")
             this.props.addCourses(res.data)
         }).catch(e => {
             console.log('Err on adding Course', e)
