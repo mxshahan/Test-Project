@@ -9,26 +9,10 @@ import axios from 'axios';
 
 class Header extends React.Component{
 	state = {
-		data: ''
-	}
-
-	componentDidMount() {
-		axios({
-			method: 'get', 
-			url: `/api/user/me`,
-            headers: {
-                'Content-Type': 'application/json',
-                'auth': this.props.token
-            }
-		}).then(res => {
-			// console.log(res)
-			this.setState({
-				data: res.data
-			});
-			localStorage.setItem('userID', res.data._id)
-		}).catch(e => {
-			console.log(e)
-		})
+		data: {
+			firstName: localStorage.getItem('firstname'),
+			email: localStorage.getItem('email')
+		}
 	}
 
 	render(){
@@ -66,7 +50,7 @@ class Header extends React.Component{
 											<ul className="list-inline hidden-sm hidden-xs">
 												<li><i className="fa fa-map-marker pr-5 pl-10"></i>7 Boroughbridge Road, Birley, UK</li>
 												<li><i className="fa fa-phone pr-5 pl-10"></i>+44 079 8708-6739</li>
-												<li><i className="fa fa-envelope-o pr-5 pl-10"></i>{this.state.data.email}</li>
+												<li><i className="fa fa-envelope-o pr-5 pl-10"></i>mail@domain.com</li>
 											</ul>
 										</div>
 									</div>
@@ -77,9 +61,10 @@ class Header extends React.Component{
 											<div id="header-top-second" className="clearfix">
 												<div className="header-top-dropdown text-right">
 													<div className="btn-group"><a href="#" className="btn btn-default btn-sm" onClick={(e) => {
-														localStorage.removeItem('accessToken');
-														localStorage.removeItem('accountType');
-														localStorage.removeItem('userID');
+														// localStorage.removeItem('accessToken');
+														// localStorage.removeItem('accountType');
+														// localStorage.removeItem('userID');
+														localStorage.clear();
 														this.props.LogoutUser()
 													}}>
 													<i className="fa fa-user pr-10"></i> Hi {this.state.data.firstName}, Logout</a>
@@ -151,7 +136,8 @@ class Header extends React.Component{
 const mapStateToProps = (state) => ({
 	isAuthenticated: !!localStorage.getItem('accessToken'),
 	accountType: localStorage.getItem('accountType'),
-	token: localStorage.getItem('accessToken')
+	token: localStorage.getItem('accessToken'),
+	firstname: localStorage.getItem('firstname')
 });
 
 const mapDispatchToProps = (dispatch) => ({

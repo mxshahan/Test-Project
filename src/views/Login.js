@@ -15,6 +15,7 @@ class Login extends React.Component{
         email: '',
         password: '',
         accountType: '',
+        loginStatus: false
     }
 
     handleLogin = (e) => {
@@ -24,7 +25,9 @@ class Login extends React.Component{
             email: this.state.email,
             password: this.state.password
         }
-
+        this.setState({
+            loginStatus: true
+        })
         axios.post(`/api/user/login`, userData).then((res) => {
             console.log('Successfully login', res);
             const body = {
@@ -38,6 +41,24 @@ class Login extends React.Component{
         }).catch(e => {
             console.log('Login error', e)
         })
+
+		axios({
+			method: 'get', 
+			url: `/api/user/me`,
+            headers: {
+                'Content-Type': 'application/json',
+                'auth': this.props.token
+            }
+		}).then(res => {
+			// console.log(res)
+			this.setState({
+				data: res.data
+			});
+			localStorage.setItem('userID', res.data._id)
+		}).catch(e => {
+			console.log(e)
+		})
+	
     }
 
     render(){
@@ -76,7 +97,11 @@ class Login extends React.Component{
                                                     <label>
                                                         <input type="checkbox" required/> Remember me. </label>
                                                 </div>
-                                                <button onClick={this.handleLogin} type="submit" className="btn btn-group btn-default btn-animated">Log In <i className="fa fa-user"></i></button>
+                                                {this.state.loginStatus ? 
+                                                    <button onClick={this.handleLogin} type="submit" className="btn btn-group btn-default btn-animated">Please Wait... <img src="https://thumbs.gfycat.com/AggressiveGrouchyHammerkop-max-1mb.gif" width="10px" alt=""/></button>
+                                                    :
+                                                    <button onClick={this.handleLogin} type="submit" className="btn btn-group btn-default btn-animated">Log In <i className="fa fa-user"></i></button>
+                                                }
                                                 <ul className="space-top">
                                                     <li><a href="#">Forgot your password?</a></li>
                                                 </ul>
