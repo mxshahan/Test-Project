@@ -86,7 +86,7 @@ class Login extends React.Component{
                                                         <input type="checkbox" required/> Remember me. </label>
                                                 </div>
                                                 {this.state.loginStatus ? 
-                                                    <button onClick={this.handleLogin} type="submit" className="btn btn-group btn-default btn-animated">Please Wait... <img src="https://thumbs.gfycat.com/AggressiveGrouchyHammerkop-max-1mb.gif" width="10px" alt=""/></button>
+                                                    <button onClick={this.handleLogin} type="submit" className="btn btn-group btn-default btn-animated"> <img src="https://thumbs.gfycat.com/AggressiveGrouchyHammerkop-max-1mb.gif" width="20px" alt=""/></button>
                                                     :
                                                     <button onClick={this.handleLogin} type="submit" className="btn btn-group btn-default btn-animated">Log In <i className="fa fa-user"></i></button>
                                                 }
